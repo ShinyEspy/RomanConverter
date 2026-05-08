@@ -1,0 +1,16 @@
+{
+  "name": "roman-converter",
+  "version": "1.0.0",
+  "description": "Roman numeral converter with CI/CD",
+  "main": "script.js",
+  "scripts": {
+    "lint": "eslint script.js tests.js",
+    "test": "mocha tests.js"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "mocha": "^10.2.0"
+  }
+}
