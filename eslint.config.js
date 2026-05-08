@@ -1,25 +1,22 @@
-const globals = require("globals");
+const globals = require('globals');
 
 module.exports = [
   {
-    files: ["**/*.js"],
-
+    files: ['**/*.js'],
     languageOptions: {
       ecmaVersion: 2021,
-      sourceType: "script",
-
+      sourceType: 'script',
       globals: {
         ...globals.browser,
         ...globals.node,
-        chai: "readonly",
-        describe: "readonly",
-        it: "readonly"
+        describe: 'readonly',
+        it: 'readonly',
+        chai: 'readonly'
       }
     },
-
     rules: {
-      semi: ["error", "always"],
-      quotes: ["error", "single"]
+      semi: ['error', 'always'],
+      quotes: ['error', 'single']
     }
   }
 ];
