@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roman ↔ Integer Converter</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Roman ↔ Integer Converter</h1>
+    <p class="subtitle">Convert integers (1–3999) to Roman numerals and Roman numerals to integers.</p>
+  </header>
+
+  <main class="container grid">
+    <section class="card" aria-labelledby="intToRomanTitle">
+      <h2 id="intToRomanTitle">Integer → Roman</h2>
+      <label for="intInput">Integer (1–3999)</label>
+      <div class="row">
+        <input id="intInput" inputmode="numeric" placeholder="e.g., 1994" autocomplete="off" />
+        <button id="intToRomanBtn" type="button">Convert</button>
+      </div>
+      <div class="hint">Tip: press <kbd>Enter</kbd> to convert.</div>
+      <div class="output" role="status" aria-live="polite">
+        <div class="label">Roman</div>
+        <div id="romanOutput" class="value">—</div>
+      </div>
+      <div id="intError" class="error" role="alert" aria-live="assertive"></div>
+    </section>
+
+    <section class="card" aria-labelledby="romanToIntTitle">
+      <h2 id="romanToIntTitle">Roman → Integer</h2>
+      <label for="romanInput">Roman numeral (I, V, X, L, C, D, M)</label>
+      <div class="row">
+        <input id="romanInput" placeholder="e.g., MCMXCIV" autocomplete="off" />
+        <button id="romanToIntBtn" type="button">Convert</button>
+      </div>
+      <div class="hint">Accepted range: I–MMMCMXCIX (1–3999). Case-insensitive.</div>
+      <div class="output" role="status" aria-live="polite">
+        <div class="label">Integer</div>
+        <div id="intOutput" class="value">—</div>
+      </div>
+      <div id="romanError" class="error" role="alert" aria-live="assertive"></div>
+    </section>
+
+    <section class="card wide" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">Rules & Notes</h2>
+      <ul>
+        <li>Supports standard Roman numerals in the range <strong>1–3999</strong>.</li>
+        <li>Uses subtractive notation (e.g., <code>IV</code>=4, <code>IX</code>=9, <code>XL</code>=40, <code>CM</code>=900).</li>
+        <li>Validates Roman numerals using a canonical pattern; non-canonical forms (e.g., <code>IIII</code>) are rejected.</li>
+      </ul>
+
+      <details>
+        <summary>Run quick self-tests</summary>
+        <p>Open the browser console and run <code>runSelfTests()</code> to execute built-in tests.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <p>Built with HTML/CSS/JavaScript (no frameworks).</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
