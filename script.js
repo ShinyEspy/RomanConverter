@@ -183,10 +183,12 @@ function runSelfTests() {
   return true;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  clearOutputs();
-  bindUI();
-});
+if (typeof document !== 'undefined') {
+  document.addEventListener('DOMContentLoaded', () => {
+    clearOutputs();
+    bindUI();
+  });
+}
 
 if (typeof module !== 'undefined') {
   module.exports = { toRoman, toInt };
