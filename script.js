@@ -77,30 +77,30 @@ function setText(id, text) {
 }
 
 function setError(id, text) {
-  setText(id, text || "");
+  setText(id, text || '');
 }
 
 function clearOutputs() {
-  setText("romanOutput", "-");
-  setText("intOutput", "-");
-  setError("intError", "");
-  setError("romanError", "");
+  setText('romanOutput', '-');
+  setText('intOutput', '-');
+  setError('intError', '');
+  setError('romanError', '');
 }
 
 function onIntConvert() {
-  setError("intError", "");
+  setError('intError', '');
   try {
     const raw = document.getElementById("intInput").value;
     const roman = toRoman(raw.trim());
-    setText("romanOutput", roman);
+    setText('romanOutput', roman);
   } catch (e) {
-    setText("romanOutput", "-");
-    setError("intError", e?.message || String(e));
+    setText('romanOutput', '-');
+    setError('intError', e?.message || String(e));
   }
 }
 
 function onRomanConvert() {
-  setError("romanError", "");
+  setError('romanError', '');
   try {
     const raw = document.getElementById("romanInput").value;
     const n = toInt(raw);
