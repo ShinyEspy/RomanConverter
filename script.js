@@ -4,29 +4,29 @@
  */
 
 const romanMap = new Map([
-  ["M", 1000],
-  ["D", 500],
-  ["C", 100],
-  ["L", 50],
-  ["X", 10],
-  ["V", 5],
-  ["I", 1],
+  ['M', 1000],
+  ['D', 500],
+  ['C', 100],
+  ['L', 50],
+  ['X', 10],
+  ['V', 5],
+  ['I', 1],
 ]);
 
 const intToRomanPairs = [
-  [1000, "M"],
-  [900, "CM"],
-  [500, "D"],
-  [400, "CD"],
-  [100, "C"],
-  [90, "XC"],
-  [50, "L"],
-  [40, "XL"],
-  [10, "X"],
-  [9, "IX"],
-  [5, "V"],
-  [4, "IV"],
-  [1, "I"],
+  [1000, 'M'],
+  [900, 'CM'],
+  [500, 'D'],
+  [400, 'CD'],
+  [100, 'C'],
+  [90, 'XC'],
+  [50, 'L'],
+  [40, 'XL'],
+  [10, 'X'],
+  [9, 'IX'],
+  [5, 'V'],
+  [4, 'IV'],
+  [1, 'I'],
 ];
 
 // Canonical validation for 1-3999: thousands, hundreds, tens, ones
@@ -141,15 +141,15 @@ function assert(cond, msg) {
 
 function runSelfTests() {
   const cases = [
-    [1, "I"],
-    [3, "III"],
-    [4, "IV"],
-    [9, "IX"],
-    [58, "LVIII"],
-    [1994, "MCMXCIV"],
-    [3999, "MMMCMXCIX"],
-    [944, "CMXLIV"],
-    [2024, "MMXXIV"],
+    [1, 'I'],
+    [3, 'III'],
+    [4, 'IV'],
+    [9, 'IX'],
+    [58, 'LVIII'],
+    [1994, 'MCMXCIV'],
+    [3999, 'MMMCMXCIX'],
+    [944, 'CMXLIV'],
+    [2024, 'MMXXIV'],
   ];
 
   for (const [n, r] of cases) {
