@@ -187,3 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
   clearOutputs();
   bindUI();
 });
+
+if (typeof module !== 'undefined') {
+  module.exports = { toRoman, toInt };
+}
