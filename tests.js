@@ -1,4 +1,5 @@
-const expect = chai.expect;
+const expect = require('chai').expect;
+const { toRoman, toInt } = require('./script');
 
 /* INTEGER TO ROMAN */
 
