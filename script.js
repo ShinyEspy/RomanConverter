@@ -89,11 +89,29 @@ function clearOutputs() {
 
 function onIntConvert() {
   setError('intError', '');
+
   try {
     const raw = document.getElementById('intInput').value;
     const roman = toRoman(raw.trim());
+
     setText('romanOutput', roman);
+
+    // Google Analytics event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'convert_integer_to_roman', {
+        value: raw
+      });
+    }
+
   } catch (e) {
+
+    // Google Analytics error event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion_error', {
+        message: e.message
+      });
+    }
+
     setText('romanOutput', '-');
     setError('intError', e?.message || String(e));
   }
@@ -101,11 +119,29 @@ function onIntConvert() {
 
 function onRomanConvert() {
   setError('romanError', '');
+
   try {
     const raw = document.getElementById('romanInput').value;
     const n = toInt(raw);
+
     setText('intOutput', String(n));
+
+    // Google Analytics event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'convert_roman_to_integer', {
+        value: raw
+      });
+    }
+
   } catch (e) {
+
+    // Google Analytics error event
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion_error', {
+        message: e.message
+      });
+    }
+
     setText('intOutput', '-');
     setError('romanError', e?.message || String(e));
   }
